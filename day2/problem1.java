@@ -25,10 +25,13 @@ public class problem1 {
         for (int i = 0; i < magnitude.size(); i++) {
             if (direction.get(i).equals("forward")) {
                 horizontalPos += Integer.parseInt(magnitude.get(i));
+                if (aim > 0) {
+                    depth += aim * Integer.parseInt(magnitude.get(i));
+                }
             } else if (direction.get(i).equals("down")) {
-                depth += Integer.parseInt(magnitude.get(i));
+                aim += Integer.parseInt(magnitude.get(i));
             } else if (direction.get(i).equals("up")) {
-                depth -= Integer.parseInt(magnitude.get(i));
+                aim -= Integer.parseInt(magnitude.get(i));
             }
         }
 
